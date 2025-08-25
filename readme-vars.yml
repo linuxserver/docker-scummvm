@@ -40,6 +40,7 @@ app_setup_block: |
 
   * https://yourhost:3001/
 
+  **The cursor double renders during gameplay, you can use "gaming mode" in the sidebar to get around this.**
 # changelog
 changelogs:
   - {date: "25.08.25:", desc: "Initial release."}

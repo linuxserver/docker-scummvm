@@ -60,6 +60,8 @@ The application can be accessed at:
 
 * https://yourhost:3001/
 
+**The cursor double renders during gameplay, you can use "gaming mode" in the sidebar to get around this.**
+
 ### Strict reverse proxies
 
 This image uses a self-signed certificate by default. This naturally means the scheme is `https`.
