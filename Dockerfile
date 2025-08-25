@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM ghcr.io/linuxserver/baseimage-selkies:debianbookworm
 
 # set version label
