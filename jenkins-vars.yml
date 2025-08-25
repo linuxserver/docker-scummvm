@@ -1,0 +1,28 @@
+---
+
+# jenkins variables
+project_name: docker-scummvm
+external_type: na
+custom_version_command: "curl -s https://downloads.scummvm.org/frs/scummvm/ | awk -F'(<a href=\"|/\">)' '{print $2}'| grep -B 1 'daily' |head -n1"
+release_type: stable
+release_tag: latest
+ls_branch: master
+build_armhf: false
+repo_vars:
+  - BUILD_VERSION_ARG = 'SCUMMVM_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-scummvm'
+  - CONTAINER_NAME = 'scummvm'
+  - DOCKERHUB_IMAGE = 'linuxserver/scummvm'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/scummvm'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/scummvm'
+  - DIST_IMAGE = 'debian'
+  - MULTIARCH = 'false'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3001'
+  - CI_SSL = 'true'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = 'TZ=US/Pacific'
+  - CI_AUTH = 'user:password'
+  - CI_WEBPATH = ''
