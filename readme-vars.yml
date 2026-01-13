@@ -113,4 +113,5 @@ init_diagram: |
   "scummvm:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "13.01.26:", desc: "Rebase to Ubuntu Noble, add wayland init."}
   - {date: "25.08.25:", desc: "Initial release."}

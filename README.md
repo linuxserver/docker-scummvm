@@ -594,4 +594,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.01.26:** - Rebase to Ubuntu Noble, add wayland init.
 * **25.08.25:** - Initial release.
