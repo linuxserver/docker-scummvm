@@ -110,6 +110,11 @@ jobs:
             echo "New version \`${EXT_RELEASE}\` found; but there already seems to be an active build on Jenkins; exiting" >> $GITHUB_STEP_SUMMARY
             exit 0
           else
+            if curl -fSsL "https://downloads.scummvm.org/frs/scummvm/${EXT_RELEASE}/scummvm_${EXT_RELEASE}-1_ubuntu24.04_amd64.deb" > /dev/null 2>&1; then
+              artifacts_found="true"
+            else
+              artifacts_found="false"
+            fi
             if [[ "${artifacts_found}" == "false" ]]; then
               echo "> [!WARNING]" >> $GITHUB_STEP_SUMMARY
               echo "> New version detected, but not all artifacts are published yet; skipping trigger" >> $GITHUB_STEP_SUMMARY
