@@ -5,7 +5,7 @@ project_name: docker-scummvm
 external_type: na
 custom_version_command: "curl -s https://downloads.scummvm.org/frs/scummvm/ | awk -F'(<a href=\"|/\">)' '{print $2}'| grep -B 1 'daily' |head -n1"
 external_artifact_check: |
-  if curl -IfSsL "https://downloads.scummvm.org/frs/scummvm/${EXT_RELEASE}/scummvm_${EXT_RELEASE}-1_ubuntu24.04_amd64.deb" > /dev/null 2>&1; then
+  if curl -IfSsL "https://downloads.scummvm.org/frs/scummvm/${EXT_RELEASE}/scummvm_${EXT_RELEASE}-1_ubuntu24_04_amd64.deb" > /dev/null 2>&1; then
     artifacts_found="true"
   else
     artifacts_found="false"

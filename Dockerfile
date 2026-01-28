@@ -23,7 +23,7 @@ RUN \
   fi && \
   curl -o \
     /tmp/scummvm.deb -L \
-    "https://downloads.scummvm.org/frs/scummvm/${SCUMMVM_VERSION}/scummvm_${SCUMMVM_VERSION}-1_ubuntu24.04_amd64.deb" && \
+    "https://downloads.scummvm.org/frs/scummvm/${SCUMMVM_VERSION}/scummvm_${SCUMMVM_VERSION}-1_ubuntu24_04_amd64.deb" && \
   apt-get update && \
   apt-get install -y \
     /tmp/scummvm.deb && \
