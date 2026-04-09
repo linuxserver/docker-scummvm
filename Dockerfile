@@ -18,12 +18,12 @@ RUN \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/scummvm-logo.png && \
   echo "**** install packages ****" && \
   if [ -z "${SCUMMVM_VERSION+x}" ]; then \
-    SCUMMVM_VERSION=$(curl -s https://downloads.scummvm.org/frs/scummvm/ \
-    | awk -F'(<a href="|/">)' '{print $2}'| grep -B 1 'daily' |head -n1); \
+    SCUMMVM_VERSION=$(curl -sX GET "https://api.github.com/repos/scummvm/scummvm/releases/latest" \
+    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   curl -o \
     /tmp/scummvm.deb -L \
-    "https://downloads.scummvm.org/frs/scummvm/${SCUMMVM_VERSION}/scummvm_${SCUMMVM_VERSION}-1_ubuntu24_04_amd64.deb" && \
+    "https://downloads.scummvm.org/frs/scummvm/$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')/scummvm_$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')-1_ubuntu24_04_amd64.deb" && \
   apt-get update && \
   apt-get install -y \
     /tmp/scummvm.deb && \
