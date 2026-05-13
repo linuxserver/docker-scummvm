@@ -1,2 +1,2 @@
 #!/bin/bash
-foot -e /usr/games/scummvm
+/usr/games/scummvm

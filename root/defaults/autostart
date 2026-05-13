@@ -1,2 +1,2 @@
 #!/bin/bash
-xterm -e /usr/games/scummvm -f
+/usr/games/scummvm -f
