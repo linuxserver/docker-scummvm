@@ -4,7 +4,7 @@
 project_name: docker-scummvm
 external_type: github_stable
 external_artifact_check: |
-  if curl -IfSsL "https://downloads.scummvm.org/frs/scummvm/$(echo ${EXT_RELEASE}| sed 's/^v//g')/scummvm_$(echo ${EXT_RELEASE}| sed 's/^v//g')-1_ubuntu24_04_amd64.deb" > /dev/null 2>&1; then
+  if curl -IfSsL "https://downloads.scummvm.org/frs/scummvm/$(echo ${EXT_RELEASE}| sed 's/^v//g')/scummvm_$(echo ${EXT_RELEASE}| sed 's/^v//g')-1_debian13_amd64.deb" > /dev/null 2>&1; then
     artifacts_found="true"
   else
     artifacts_found="false"

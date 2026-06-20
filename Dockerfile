@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
 
 # set version label
 ARG BUILD_DATE
@@ -9,7 +9,8 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="thelamer"
 
 # title
-ENV TITLE=ScummVM
+ENV TITLE=ScummVM \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
@@ -23,7 +24,7 @@ RUN \
   fi && \
   curl -o \
     /tmp/scummvm.deb -L \
-    "https://downloads.scummvm.org/frs/scummvm/$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')/scummvm_$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')-1_ubuntu24_04_amd64.deb" && \
+    "https://downloads.scummvm.org/frs/scummvm/$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')/scummvm_$(echo ${SCUMMVM_VERSION} | sed 's/^v//g')-1_debian13_amd64.deb" && \
   apt-get update && \
   apt-get install -y \
     /tmp/scummvm.deb && \
