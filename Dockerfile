@@ -20,7 +20,7 @@ RUN \
   echo "**** install packages ****" && \
   if [ -z "${SCUMMVM_VERSION+x}" ]; then \
     SCUMMVM_VERSION=$(curl -sX GET "https://api.github.com/repos/scummvm/scummvm/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/scummvm.deb -L \
