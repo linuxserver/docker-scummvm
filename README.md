@@ -360,6 +360,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **22.09.26:** - Update for Selkies v2, default to X11 for cursor.
 * **20.06.26:** - Rebase to Debian Trixie, make Wayland default disable with PIXELFLUX_WAYLAND=false.
 * **13.01.26:** - Rebase to Ubuntu Noble, add wayland init.
 * **25.08.25:** - Initial release.
